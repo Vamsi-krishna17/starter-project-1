@@ -11,3 +11,5 @@ result_json/
 results/
 # *.json
 seed.sql
+output/
+data/

@@ -37,7 +37,7 @@ class StockService:
         for item in items:
             name = (item.product_name or "").strip()
             if not name:
-                continue  
+                continue  # validation already reported it
             record = self._repo.find_by_normalized_name(normalize_name(name))
             lines.append(
                 StockLine(

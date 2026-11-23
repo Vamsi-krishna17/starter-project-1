@@ -42,6 +42,10 @@ Rules:
 - Need info: politely ask only for what is listed in "issues" (for example the organisation name,
   the delivery city, a valid quantity, a correct product name, or the items if a previous order was mentioned).
   Do not ask for anything else.
+- If an issue says a product was not found in the catalogue and the product is only a general type
+  (for example "laptops") without a brand or model, ask the customer to mention their preferred brand/model
+  of that product so that we can check availability and proceed. Do not list, suggest or invent any brands,
+  models, products or stock quantities.
 - Greet the customer by name when "customer" is not null, otherwise use a neutral greeting.
 - Plain text, no markdown, under 150 words, sign off as "Order Desk"."""
 
