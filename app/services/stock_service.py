@@ -22,6 +22,7 @@ class StockLine:
     product_code: str | None
     requested: int | None
     available: int | None
+    unit_price_inr: int | None = None  # read from products; used only by the quote step
 
     @property
     def found(self) -> bool:
@@ -31,6 +32,10 @@ class StockLine:
 class StockService:
     def __init__(self, repository: ProductRepository):
         self._repo = repository
+
+    @property
+    def repository(self) -> ProductRepository:
+        return self._repo
 
     def check(self, items: list[OrderItem]) -> list[StockLine]:
         lines: list[StockLine] = []
@@ -45,6 +50,7 @@ class StockService:
                     product_code=record.product_code if record else None,
                     requested=item.requested if is_valid_quantity(item.requested) else None,
                     available=record.available if record else None,
+                    unit_price_inr=record.unit_price_inr if record else None,
                 )
             )
         return lines

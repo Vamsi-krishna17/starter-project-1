@@ -1,6 +1,7 @@
 """Central configuration. Every other module imports settings from here."""
 import os
 from dataclasses import dataclass
+from decimal import Decimal
 from functools import lru_cache
 
 from dotenv import load_dotenv
@@ -27,10 +28,23 @@ class Settings:
     langsmith_project: str
     langsmith_endpoint: str
     langsmith_trace_content: bool
+    embedding_deployment: str
+    embedding_dimensions: int
+    rag_top_k: int
+    rag_resolve_top_k: int
+    quote_discount_tiers: tuple  # ((min_quantity, discount_percent), ...) ascending
+    quote_free_delivery_threshold_inr: Decimal
+    quote_delivery_charge_inr: Decimal
+    quote_validity_days: int
 
 
 def _flag(name: str) -> bool:
     return os.getenv(name, "false").strip().lower() in ("1", "true", "yes")
+
+
+def _tiers(raw: str) -> tuple:
+    pairs = [p.split(":") for p in raw.split(",") if p.strip()]
+    return tuple(sorted((int(q), int(d)) for q, d in pairs))
 
 
 def load_settings() -> Settings:
@@ -52,6 +66,14 @@ def load_settings() -> Settings:
         langsmith_project=os.getenv("LANGSMITH_PROJECT", "email-to-order-starter-project"),
         langsmith_endpoint=os.getenv("LANGSMITH_ENDPOINT", "https://api.smith.langchain.com"),
         langsmith_trace_content=_flag("LANGSMITH_TRACE_CONTENT"),
+        embedding_deployment=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"),
+        embedding_dimensions=1536,  # text-embedding-3-small; documents and queries use the same model
+        rag_top_k=int(os.getenv("RAG_TOP_K", "5")),
+        rag_resolve_top_k=int(os.getenv("RAG_RESOLVE_TOP_K", "10")),
+        quote_discount_tiers=_tiers(os.getenv("QUOTE_DISCOUNT_TIERS", "1:0,10:5,50:8,200:12")),
+        quote_free_delivery_threshold_inr=Decimal(os.getenv("QUOTE_FREE_DELIVERY_THRESHOLD_INR", "50000")),
+        quote_delivery_charge_inr=Decimal(os.getenv("QUOTE_DELIVERY_CHARGE_INR", "1500")),
+        quote_validity_days=int(os.getenv("QUOTE_VALIDITY_DAYS", "7")),
     )
 
 

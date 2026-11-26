@@ -28,6 +28,11 @@ class ValidationResult:
         return not self.issues
 
 
+def mentions_previous_order(body: str) -> bool:
+    """Backup for the LLM's repeat_order flag: "same as last time" style phrases."""
+    return any(p.search(body) for p in PREVIOUS_ORDER_PATTERNS)
+
+
 def is_valid_quantity(value) -> bool:
     return isinstance(value, int) and not isinstance(value, bool) and value > 0
 
@@ -37,9 +42,7 @@ class OrderValidationService:
         self.lead_time_days = lead_time_days
         self.require_deadline = require_deadline
 
-    def validate(
-        self, extracted: ExtractedOrder, reference_date: date, body: str = ""
-    ) -> ValidationResult:
+    def validate(self, extracted: ExtractedOrder, reference_date: date) -> ValidationResult:
         result = ValidationResult()
 
         if not (extracted.customer or "").strip():
@@ -58,11 +61,6 @@ class OrderValidationService:
 
         self._check_deadline(extracted.deadline, reference_date, result)
 
-        if any(p.search(body) for p in PREVIOUS_ORDER_PATTERNS):
-            result.issues.append(
-                "The email refers to a previous order, which cannot be looked up; "
-                "please list the items and quantities"
-            )
         return result
 
     def _check_deadline(

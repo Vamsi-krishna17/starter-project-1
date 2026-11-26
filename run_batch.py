@@ -4,7 +4,7 @@ This script only makes HTTP requests, exactly like Swagger does. It has no LLM, 
 business logic of its own, so start the app first:  docker compose up --build
 
 Usage (from the project root):
-  python run_batch.py                               # data/input/labelled + data/input/practice
+  python run_batch.py                               # every sub-folder of Input/
   python run_batch.py data/input/labelled           # one or more folders
   python run_batch.py --base-url http://localhost:8000 -o output/batch_results.json
 
@@ -21,7 +21,8 @@ from pathlib import Path
 
 import httpx
 
-DEFAULT_DIRS = ["data/input/labelled", "data/input/practice"]
+DEFAULT_ROOTS = ["Input", "input", "data/input"]   # every sub-folder of these is processed when no folder is given
+DEFAULT_DIRS = ["data/input/labelled", "data/input/practice"]   # older layout
 FALLBACK_DIR = "data/emails"
 DEFAULT_OUTPUT = "output/batch_results.json"
 DEFAULT_BASE_URL = "http://localhost:8000"
@@ -29,6 +30,22 @@ ENDPOINT = "/orders"
 DEFAULT_TIMEOUT = 120.0  # seconds; each request makes two LLM calls
 SKIP_SUFFIXES = {".json", ".md", ".sql", ".py", ".gitkeep"}
 REQUIRED_FIELDS = {"customer", "delivery_city", "deadline", "items", "status", "issues", "reply"}
+
+
+def default_folders() -> list[Path]:
+    """Every sub-folder of Input/ (labelled-1, labelled-2, practice, ...). Older layouts still work.
+    Windows treats Input/input as one folder, so a folder is never listed twice."""
+    candidates: list[Path] = []
+    for root in DEFAULT_ROOTS:
+        r = Path(root)
+        if r.is_dir():
+            candidates += sorted(p for p in r.iterdir() if p.is_dir() and not p.name.startswith("."))
+    candidates += [Path(d) for d in DEFAULT_DIRS if Path(d).is_dir()]
+    found: list[Path] = []
+    for p in candidates:
+        if not any(os.path.samefile(p, q) for q in found):
+            found.append(p)
+    return found
 
 
 def find_email_files(folders: list[Path]) -> list[tuple[str, Path]]:
@@ -116,7 +133,7 @@ def main(argv: list[str] | None = None, transport: httpx.BaseTransport | None = 
     parser.add_argument("--timeout", type=float, default=DEFAULT_TIMEOUT)
     args = parser.parse_args(argv)
 
-    names = args.folders or [d for d in DEFAULT_DIRS if Path(d).is_dir()] or [FALLBACK_DIR]
+    names = args.folders or [str(p) for p in default_folders()] or [FALLBACK_DIR]
     folders = [Path(n) for n in names]
     missing = [str(f) for f in folders if not f.is_dir()]
     if missing:

@@ -1,15 +1,11 @@
+
 .env
+.venv/
 __pycache__/
 *.pyc
 .pytest_cache/
-.venv/
-tests/
+
 output/
-pytest.ini/
+answer_key-1.json
+answer_key-2.json
 input/
-result_json/
-results/
-# *.json
-seed.sql
-output/
-data/
