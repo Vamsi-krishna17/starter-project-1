@@ -1,0 +1,1416 @@
+{
+  "emails_dir": "Input\\labelled-2",
+  "ignored_fields": [],
+  "totals": {
+    "emails": 10,
+    "pass": 4,
+    "fail": 6,
+    "errors": 0,
+    "fields_compared": 158,
+    "fields_matched": 149,
+    "field_match_pct": 94.3
+  },
+  "per_field": {
+    "customer": {
+      "compared": 10,
+      "matched": 10
+    },
+    "delivery_city": {
+      "compared": 10,
+      "matched": 5
+    },
+    "deadline": {
+      "compared": 10,
+      "matched": 10
+    },
+    "status": {
+      "compared": 10,
+      "matched": 10
+    },
+    "issues": {
+      "compared": 10,
+      "matched": 7
+    },
+    "items": {
+      "compared": 37,
+      "matched": 36
+    },
+    "quote": {
+      "compared": 71,
+      "matched": 71
+    }
+  },
+  "emails": [
+    {
+      "id": "email_21",
+      "file": "email_21.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Sunbeam International School",
+          "actual": "Sunbeam International School",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Pune",
+          "actual": "Kothrud, Pune",
+          "match": false
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-11",
+          "actual": "2026-12-11",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 8 Lite].product_code",
+          "expected": "TAB-08",
+          "actual": "TAB-08",
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 8 Lite].requested",
+          "expected": 60,
+          "actual": 60,
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 8 Lite].available",
+          "expected": 60,
+          "actual": 60,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].product_code",
+          "expected": "EAR-01",
+          "actual": "EAR-01",
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].requested",
+          "expected": 60,
+          "actual": 60,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].available",
+          "expected": 350,
+          "actual": 350,
+          "match": true
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 596049.6,
+          "actual": 596049.6,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 0.0,
+          "actual": 0.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 596049.6,
+          "actual": 596049.6,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-27",
+          "actual": "2026-11-27",
+          "match": true
+        },
+        {
+          "field": "quote.lines[TAB-08].quantity",
+          "expected": 60,
+          "actual": 60,
+          "match": true
+        },
+        {
+          "field": "quote.lines[TAB-08].unit_price_inr",
+          "expected": 9499,
+          "actual": 9499,
+          "match": true
+        },
+        {
+          "field": "quote.lines[TAB-08].discount_percent",
+          "expected": 8,
+          "actual": 8,
+          "match": true
+        },
+        {
+          "field": "quote.lines[TAB-08].line_total_inr",
+          "expected": 524344.8,
+          "actual": 524344.8,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].quantity",
+          "expected": 60,
+          "actual": 60,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].unit_price_inr",
+          "expected": 1299,
+          "actual": 1299,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].discount_percent",
+          "expected": 8,
+          "actual": 8,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].line_total_inr",
+          "expected": 71704.8,
+          "actual": 71704.8,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Sunbeam International School",
+        "delivery_city": "Kothrud, Pune",
+        "deadline": "2026-12-11",
+        "items": [
+          {
+            "product_name": "Nimbus Tab 8 Lite",
+            "product_code": "TAB-08",
+            "requested": 60,
+            "available": 60
+          },
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 60,
+            "available": 350
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-08",
+              "quantity": 60,
+              "unit_price_inr": 9499,
+              "discount_percent": 8,
+              "line_total_inr": 524344.8
+            },
+            {
+              "product_code": "EAR-01",
+              "quantity": 60,
+              "unit_price_inr": 1299,
+              "discount_percent": 8,
+              "line_total_inr": 71704.8
+            }
+          ],
+          "subtotal_inr": 596049.6,
+          "delivery_inr": 0.0,
+          "total_inr": 596049.6,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Sunbeam International School,\n\nThank you for your order. We confirm that the requested 60 units of Nimbus Tab 8 Lite and 60 units of Pebble Buds are fully available. Your order can proceed as specified.\n\nThe total amount for your order is INR 596,049.60, inclusive of an 8% discount. Please note, the quote is valid until November 27, 2026.\n\nIf you have any further questions or need assistance, do not hesitate to contact us.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_22",
+      "file": "email_22.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Lotus Mobiles",
+          "actual": "Lotus Mobiles",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Coimbatore",
+          "actual": "Coimbatore",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-04",
+          "actual": "2026-12-04",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[black 128 GB 5G phone]",
+          "expected": "present",
+          "actual": "missing",
+          "match": false
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 174995.0,
+          "actual": 174995.0,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 0.0,
+          "actual": 0.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 174995.0,
+          "actual": 174995.0,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-27",
+          "actual": "2026-11-27",
+          "match": true
+        },
+        {
+          "field": "quote.lines[PHN-X9].quantity",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "quote.lines[PHN-X9].unit_price_inr",
+          "expected": 34999,
+          "actual": 34999,
+          "match": true
+        },
+        {
+          "field": "quote.lines[PHN-X9].discount_percent",
+          "expected": 0,
+          "actual": 0,
+          "match": true
+        },
+        {
+          "field": "quote.lines[PHN-X9].line_total_inr",
+          "expected": 174995.0,
+          "actual": 174995.0,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Lotus Mobiles",
+        "delivery_city": "Coimbatore",
+        "deadline": "2026-12-04",
+        "items": [
+          {
+            "product_name": "black 128 GB 5G phones",
+            "product_code": "PHN-X9",
+            "requested": 5,
+            "available": 6
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "PHN-X9",
+              "quantity": 5,
+              "unit_price_inr": 34999,
+              "discount_percent": 0,
+              "line_total_inr": 174995.0
+            }
+          ],
+          "subtotal_inr": 174995.0,
+          "delivery_inr": 0.0,
+          "total_inr": 174995.0,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Lotus Mobiles,\n\nYour order for 5 units of black 128 GB 5G phones (product code PHN-X9) is confirmed and can proceed. The quoted total is INR 174,995, valid until 2026-11-27.\n\nPlease let us know if you need any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_23",
+      "file": "email_23.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Sahyadri Tech Solutions",
+          "actual": "Sahyadri Tech Solutions",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Pune",
+          "actual": "Pune",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-08",
+          "actual": "2026-12-08",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].product_code",
+          "expected": "LAP-14",
+          "actual": "LAP-14",
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].requested",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].available",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].product_code",
+          "expected": "CHG-65",
+          "actual": "CHG-65",
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].requested",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].available",
+          "expected": 200,
+          "actual": 200,
+          "match": true
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 267495.0,
+          "actual": 267495.0,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 0.0,
+          "actual": 0.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 267495.0,
+          "actual": 267495.0,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-28",
+          "actual": "2026-11-28",
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].quantity",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].unit_price_inr",
+          "expected": 52000,
+          "actual": 52000,
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].discount_percent",
+          "expected": 0,
+          "actual": 0,
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].line_total_inr",
+          "expected": 260000.0,
+          "actual": 260000.0,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].quantity",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].unit_price_inr",
+          "expected": 1499,
+          "actual": 1499,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].discount_percent",
+          "expected": 0,
+          "actual": 0,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].line_total_inr",
+          "expected": 7495.0,
+          "actual": 7495.0,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Sahyadri Tech Solutions",
+        "delivery_city": "Pune",
+        "deadline": "2026-12-08",
+        "items": [
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 5,
+            "available": 200
+          },
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 5,
+            "available": 12
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "CHG-65",
+              "quantity": 5,
+              "unit_price_inr": 1499,
+              "discount_percent": 0,
+              "line_total_inr": 7495.0
+            },
+            {
+              "product_code": "LAP-14",
+              "quantity": 5,
+              "unit_price_inr": 52000,
+              "discount_percent": 0,
+              "line_total_inr": 260000.0
+            }
+          ],
+          "subtotal_inr": 267495.0,
+          "delivery_inr": 0.0,
+          "total_inr": 267495.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Sahyadri Tech Solutions,\n\nThank you for your order. We confirm the details as follows:\n\n- Volt 65W Charger (CHG-65): 5 units requested and fully available.\n- Corelink Book 14 (LAP-14): 5 units requested and fully available.\n\nThe total quoted amount is INR 267,495, valid until 2026-11-28.\n\nYour order can now proceed. Please let us know if you need any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_24",
+      "file": "email_24.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Coastline Telecom",
+          "actual": "Coastline Telecom",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Kochi",
+          "actual": "Kakkanad, Kochi",
+          "match": false
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-15",
+          "actual": "2026-12-15",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Partial",
+          "actual": "Partial",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Corelink Book 14: requested 30, only 12 in stock"
+          ],
+          "actual": [
+            "Corelink Book 14: requested 30, only 12 in stock"
+          ],
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].product_code",
+          "expected": "LAP-14",
+          "actual": "LAP-14",
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].requested",
+          "expected": 30,
+          "actual": 30,
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].available",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].product_code",
+          "expected": "CHG-65",
+          "actual": "CHG-65",
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].requested",
+          "expected": 20,
+          "actual": 20,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].available",
+          "expected": 200,
+          "actual": 200,
+          "match": true
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 621281.0,
+          "actual": 621281.0,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 0.0,
+          "actual": 0.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 621281.0,
+          "actual": 621281.0,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-27",
+          "actual": "2026-11-27",
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].quantity",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].unit_price_inr",
+          "expected": 52000,
+          "actual": 52000,
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].discount_percent",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "quote.lines[LAP-14].line_total_inr",
+          "expected": 592800.0,
+          "actual": 592800.0,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].quantity",
+          "expected": 20,
+          "actual": 20,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].unit_price_inr",
+          "expected": 1499,
+          "actual": 1499,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].discount_percent",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "quote.lines[CHG-65].line_total_inr",
+          "expected": 28481.0,
+          "actual": 28481.0,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Coastline Telecom",
+        "delivery_city": "Kakkanad, Kochi",
+        "deadline": "2026-12-15",
+        "items": [
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 30,
+            "available": 12
+          },
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 20,
+            "available": 200
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Corelink Book 14: requested 30, only 12 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "LAP-14",
+              "quantity": 12,
+              "unit_price_inr": 52000,
+              "discount_percent": 5,
+              "line_total_inr": 592800.0
+            },
+            {
+              "product_code": "CHG-65",
+              "quantity": 20,
+              "unit_price_inr": 1499,
+              "discount_percent": 5,
+              "line_total_inr": 28481.0
+            }
+          ],
+          "subtotal_inr": 621281.0,
+          "delivery_inr": 0.0,
+          "total_inr": 621281.0,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Coastline Telecom,\n\nThank you for your order. We can supply the full quantity of 20 Volt 65W Chargers (product code CHG-65) as requested. Regarding the Corelink Book 14 laptops (product code LAP-14), we currently have 12 units available out of the 30 requested.\n\nThe quoted total for your order, valid until 2026-11-27, is INR 621,281.00, including a 5% discount on both products and free delivery.\n\nPlease confirm if you wish to proceed with the available quantities or have any further instructions.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_25",
+      "file": "email_25.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Eventora",
+          "actual": "Eventora",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Kolkata",
+          "actual": "Salt Lake, Kolkata",
+          "match": false
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-09",
+          "actual": "2026-12-09",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Ambiguous product: wireless earbuds (could be Pebble Buds or Pebble Buds Pro)"
+          ],
+          "actual": [
+            "wireless earbuds: matches more than one product (EAR-01, EAR-02); please say which one you mean"
+          ],
+          "match": false
+        },
+        {
+          "field": "items[wireless earbuds].product_code",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "items[wireless earbuds].requested",
+          "expected": 20,
+          "actual": 20,
+          "match": true
+        },
+        {
+          "field": "items[wireless earbuds].available",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "quote",
+          "expected": null,
+          "actual": null,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Eventora",
+        "delivery_city": "Salt Lake, Kolkata",
+        "deadline": "2026-12-09",
+        "items": [
+          {
+            "product_name": "wireless earbuds",
+            "product_code": null,
+            "requested": 20,
+            "available": null
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "wireless earbuds: matches more than one product (EAR-01, EAR-02); please say which one you mean"
+        ],
+        "quote": null,
+        "reply": "Dear Eventora,\n\nThank you for your order inquiry. We noticed that \"wireless earbuds\" matches more than one product in our catalogue: EAR-01 (Pebble Buds) and EAR-02 (Pebble Buds Pro). Could you please specify which product you mean in order to proceed with your order? \n\nWe look forward to your clarification.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_26",
+      "file": "email_26.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Callpoint Services",
+          "actual": "Callpoint Services",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Thiruvananthapuram",
+          "actual": "Thiruvananthapuram",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-07",
+          "actual": "2026-12-07",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Quietline Headset].product_code",
+          "expected": "HDS-10",
+          "actual": "HDS-10",
+          "match": true
+        },
+        {
+          "field": "items[Quietline Headset].requested",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "items[Quietline Headset].available",
+          "expected": 45,
+          "actual": 45,
+          "match": true
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 9196.0,
+          "actual": 9196.0,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 1500.0,
+          "actual": 1500.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 10696.0,
+          "actual": 10696.0,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-28",
+          "actual": "2026-11-28",
+          "match": true
+        },
+        {
+          "field": "quote.lines[HDS-10].quantity",
+          "expected": 4,
+          "actual": 4,
+          "match": true
+        },
+        {
+          "field": "quote.lines[HDS-10].unit_price_inr",
+          "expected": 2299,
+          "actual": 2299,
+          "match": true
+        },
+        {
+          "field": "quote.lines[HDS-10].discount_percent",
+          "expected": 0,
+          "actual": 0,
+          "match": true
+        },
+        {
+          "field": "quote.lines[HDS-10].line_total_inr",
+          "expected": 9196.0,
+          "actual": 9196.0,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Callpoint Services",
+        "delivery_city": "Thiruvananthapuram",
+        "deadline": "2026-12-07",
+        "items": [
+          {
+            "product_name": "Quietline Headset",
+            "product_code": "HDS-10",
+            "requested": 4,
+            "available": 45
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "HDS-10",
+              "quantity": 4,
+              "unit_price_inr": 2299,
+              "discount_percent": 0,
+              "line_total_inr": 9196.0
+            }
+          ],
+          "subtotal_inr": 9196.0,
+          "delivery_inr": 1500.0,
+          "total_inr": 10696.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Callpoint Services,\n\nThank you for your order. We confirm that the requested 4 units of Quietline Headset (product code HDS-10) are fully available, and your order can proceed. The total for the 4 headsets is INR 9,196 with an additional delivery charge of INR 1,500, amounting to a total of INR 10,696. This quote is valid until 28 November 2026.\n\nPlease feel free to reach out if you need any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_27",
+      "file": "email_27.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Deccan Fiber",
+          "actual": "Deccan Fiber",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Nashik",
+          "actual": "Nashik",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-10",
+          "actual": "2026-12-10",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Meshwave AX3000 Router].product_code",
+          "expected": "RTR-AX3",
+          "actual": "RTR-AX3",
+          "match": true
+        },
+        {
+          "field": "items[Meshwave AX3000 Router].requested",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "items[Meshwave AX3000 Router].available",
+          "expected": 30,
+          "actual": 30,
+          "match": true
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 74088.6,
+          "actual": 74088.6,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 0.0,
+          "actual": 0.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 74088.6,
+          "actual": 74088.6,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-27",
+          "actual": "2026-11-27",
+          "match": true
+        },
+        {
+          "field": "quote.lines[RTR-AX3].quantity",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "quote.lines[RTR-AX3].unit_price_inr",
+          "expected": 6499,
+          "actual": 6499,
+          "match": true
+        },
+        {
+          "field": "quote.lines[RTR-AX3].discount_percent",
+          "expected": 5,
+          "actual": 5,
+          "match": true
+        },
+        {
+          "field": "quote.lines[RTR-AX3].line_total_inr",
+          "expected": 74088.6,
+          "actual": 74088.6,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Deccan Fiber",
+        "delivery_city": "Nashik",
+        "deadline": "2026-12-10",
+        "items": [
+          {
+            "product_name": "Meshwave AX3000 Router",
+            "product_code": "RTR-AX3",
+            "requested": 12,
+            "available": 30
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "RTR-AX3",
+              "quantity": 12,
+              "unit_price_inr": 6499,
+              "discount_percent": 5,
+              "line_total_inr": 74088.6
+            }
+          ],
+          "subtotal_inr": 74088.6,
+          "delivery_inr": 0.0,
+          "total_inr": 74088.6,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Deccan Fiber,\n\nThank you for your order. We confirm that your request for 12 units of the Meshwave AX3000 Router (product code RTR-AX3) is fully available, and the order can proceed.\n\nYour quote amounts to INR 74,088.60 after a 5% discount, and this quote is valid until 27 November 2026.\n\nPlease note, the Meshwave AX3000 Router comes with a 1-year warranty from the date of delivery.\n\nWe look forward to processing your order.\n\nBest regards,\nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_28",
+      "file": "email_28.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Kaveri Hospitals",
+          "actual": "Kaveri Hospitals",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Bengaluru",
+          "actual": "Jayanagar, Bengaluru",
+          "match": false
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-10",
+          "actual": "2026-12-10",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Refers to a previous order, but there is no order history for Kaveri Hospitals"
+          ],
+          "actual": [
+            "No items were requested",
+            "No previous order was found for this customer, so the earlier order cannot be repeated"
+          ],
+          "match": false
+        },
+        {
+          "field": "quote",
+          "expected": null,
+          "actual": null,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Kaveri Hospitals",
+        "delivery_city": "Jayanagar, Bengaluru",
+        "deadline": "2026-12-10",
+        "items": [],
+        "status": "Need info",
+        "issues": [
+          "No items were requested",
+          "No previous order was found for this customer, so the earlier order cannot be repeated"
+        ],
+        "quote": null,
+        "reply": "Dear Kaveri Hospitals,\n\nThank you for your inquiry. We noticed that your order request contains no items to process. Additionally, we do not have any previous orders from your organization to repeat.\n\nCould you please provide the list of products you wish to order so that we can assist you further? We look forward to receiving your details.\n\nBest regards,\nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_29",
+      "file": "email_29.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Brightline Design",
+          "actual": "Brightline Design",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Goa",
+          "actual": "Panjim",
+          "match": false
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-12",
+          "actual": "2026-12-12",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Unknown product: Corelink Book 13"
+          ],
+          "actual": [
+            "Corelink Book 13: not found in the catalogue"
+          ],
+          "match": false
+        },
+        {
+          "field": "items[Corelink Book 13].product_code",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 13].requested",
+          "expected": 6,
+          "actual": 6,
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 13].available",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "items[Clearview 24 Monitor].product_code",
+          "expected": "MON-24",
+          "actual": "MON-24",
+          "match": true
+        },
+        {
+          "field": "items[Clearview 24 Monitor].requested",
+          "expected": 6,
+          "actual": 6,
+          "match": true
+        },
+        {
+          "field": "items[Clearview 24 Monitor].available",
+          "expected": 18,
+          "actual": 18,
+          "match": true
+        },
+        {
+          "field": "quote",
+          "expected": null,
+          "actual": null,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Brightline Design",
+        "delivery_city": "Panjim",
+        "deadline": "2026-12-12",
+        "items": [
+          {
+            "product_name": "Corelink Book 13",
+            "product_code": null,
+            "requested": 6,
+            "available": null
+          },
+          {
+            "product_name": "Clearview 24 Monitor",
+            "product_code": "MON-24",
+            "requested": 6,
+            "available": 18
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Corelink Book 13: not found in the catalogue"
+        ],
+        "quote": null,
+        "reply": "Dear Brightline Design,\n\nThank you for your order. We can confirm availability of the Clearview 24 Monitor (product code MON-24) with your requested quantity of 6 units.\n\nRegarding the Corelink Book 13, we could not find this product in our catalogue. Could you please specify your preferred brand or model for this laptop so that we can check availability and proceed with your order?\n\nWe look forward to your reply.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_30",
+      "file": "email_30.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Shubh Vivah Weddings",
+          "actual": "Shubh Vivah Weddings",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Jaipur",
+          "actual": "Jaipur",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-18",
+          "actual": "2026-12-18",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].product_code",
+          "expected": "EAR-01",
+          "actual": "EAR-01",
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].requested",
+          "expected": 250,
+          "actual": 250,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].available",
+          "expected": 350,
+          "actual": 350,
+          "match": true
+        },
+        {
+          "field": "quote.subtotal_inr",
+          "expected": 285780.0,
+          "actual": 285780.0,
+          "match": true
+        },
+        {
+          "field": "quote.delivery_inr",
+          "expected": 0.0,
+          "actual": 0.0,
+          "match": true
+        },
+        {
+          "field": "quote.total_inr",
+          "expected": 285780.0,
+          "actual": 285780.0,
+          "match": true
+        },
+        {
+          "field": "quote.valid_until",
+          "expected": "2026-11-28",
+          "actual": "2026-11-28",
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].quantity",
+          "expected": 250,
+          "actual": 250,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].unit_price_inr",
+          "expected": 1299,
+          "actual": 1299,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].discount_percent",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "quote.lines[EAR-01].line_total_inr",
+          "expected": 285780.0,
+          "actual": 285780.0,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Shubh Vivah Weddings",
+        "delivery_city": "Jaipur",
+        "deadline": "2026-12-18",
+        "items": [
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 250,
+            "available": 350
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "EAR-01",
+              "quantity": 250,
+              "unit_price_inr": 1299,
+              "discount_percent": 12,
+              "line_total_inr": 285780.0
+            }
+          ],
+          "subtotal_inr": 285780.0,
+          "delivery_inr": 0.0,
+          "total_inr": 285780.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Shubh Vivah Weddings,\n\nThank you for your order. The details for 250 units of Pebble Buds (product code EAR-01) are confirmed, and your order can proceed. The quoted total is INR 285,780, with a 12% discount applied. Please note this quote is valid until 2026-11-28.\n\nThese wireless earbuds, best suited for students, events, and giveaways, offer up to 20 hours of battery life with the case.\n\nIf you need further assistance, please feel free to reach out.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    }
+  ],
+  "answer_key": "answer_key-2.json"
+}

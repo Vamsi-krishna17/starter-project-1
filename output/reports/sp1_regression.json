@@ -1,0 +1,1005 @@
+{
+  "emails_dir": "Input\\labelled-1",
+  "ignored_fields": [
+    "quote"
+  ],
+  "totals": {
+    "emails": 10,
+    "pass": 5,
+    "fail": 5,
+    "errors": 0,
+    "fields_compared": 89,
+    "fields_matched": 79,
+    "field_match_pct": 88.8
+  },
+  "per_field": {
+    "customer": {
+      "compared": 10,
+      "matched": 10
+    },
+    "delivery_city": {
+      "compared": 10,
+      "matched": 9
+    },
+    "deadline": {
+      "compared": 10,
+      "matched": 9
+    },
+    "status": {
+      "compared": 10,
+      "matched": 9
+    },
+    "issues": {
+      "compared": 10,
+      "matched": 5
+    },
+    "items": {
+      "compared": 39,
+      "matched": 37
+    }
+  },
+  "emails": [
+    {
+      "id": "email_01",
+      "file": "email_01.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Sahyadri Tech Solutions",
+          "actual": "Sahyadri Tech Solutions",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Pune",
+          "actual": "Pune",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-11-24",
+          "actual": "2026-11-24",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].product_code",
+          "expected": "LAP-14",
+          "actual": "LAP-14",
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].requested",
+          "expected": 10,
+          "actual": 10,
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].available",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].product_code",
+          "expected": "CHG-65",
+          "actual": "CHG-65",
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].requested",
+          "expected": 10,
+          "actual": 10,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].available",
+          "expected": 200,
+          "actual": 200,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Sahyadri Tech Solutions",
+        "delivery_city": "Pune",
+        "deadline": "2026-11-24",
+        "items": [
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 10,
+            "available": 12
+          },
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 10,
+            "available": 200
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "LAP-14",
+              "quantity": 10,
+              "unit_price_inr": 52000,
+              "discount_percent": 5,
+              "line_total_inr": 494000.0
+            },
+            {
+              "product_code": "CHG-65",
+              "quantity": 10,
+              "unit_price_inr": 1499,
+              "discount_percent": 5,
+              "line_total_inr": 14240.5
+            }
+          ],
+          "subtotal_inr": 508240.5,
+          "delivery_inr": 0.0,
+          "total_inr": 508240.5,
+          "valid_until": "2026-11-23"
+        },
+        "reply": "Dear Sahyadri Tech Solutions,\n\nThank you for your order. We confirm that your request for 10 Corelink Book 14 laptops and 10 Volt 65W Chargers is fully available and ready to proceed.\n\nThe total quote amount is INR 508,240.50, inclusive of a 5% discount on both products. The quote is valid until November 23, 2026.\n\nPlease let us know if you require any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_02",
+      "file": "email_02.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Brightpath Coaching Centre",
+          "actual": "Brightpath Coaching Centre",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Hyderabad",
+          "actual": "Hyderabad",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-11-23",
+          "actual": "2026-11-23",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 8 Lite].product_code",
+          "expected": "TAB-08",
+          "actual": "TAB-08",
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 8 Lite].requested",
+          "expected": 15,
+          "actual": 15,
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 8 Lite].available",
+          "expected": 60,
+          "actual": 60,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].product_code",
+          "expected": "EAR-01",
+          "actual": "EAR-01",
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].requested",
+          "expected": 15,
+          "actual": 15,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].available",
+          "expected": 350,
+          "actual": 350,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Brightpath Coaching Centre",
+        "delivery_city": "Hyderabad",
+        "deadline": "2026-11-23",
+        "items": [
+          {
+            "product_name": "nimbus tab 8 lite",
+            "product_code": "TAB-08",
+            "requested": 15,
+            "available": 60
+          },
+          {
+            "product_name": "PEBBLE BUDS",
+            "product_code": "EAR-01",
+            "requested": 15,
+            "available": 350
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-08",
+              "quantity": 15,
+              "unit_price_inr": 9499,
+              "discount_percent": 5,
+              "line_total_inr": 135360.75
+            },
+            {
+              "product_code": "EAR-01",
+              "quantity": 15,
+              "unit_price_inr": 1299,
+              "discount_percent": 5,
+              "line_total_inr": 18510.75
+            }
+          ],
+          "subtotal_inr": 153871.5,
+          "delivery_inr": 0.0,
+          "total_inr": 153871.5,
+          "valid_until": "2026-11-23"
+        },
+        "reply": "Dear Brightpath Coaching Centre,\n\nThank you for your order. We confirm that your requested quantities of 15 Nimbus Tab 8 Lite (TAB-08) and 15 Pebble Buds (EAR-01) are fully available. Your order details and pricing have been confirmed, and we can proceed with processing your order.\n\nPlease note the total amount is INR 153,871.50, valid until 2026-11-23.\n\nNimbus Tab 8 Lite is well suited for coaching centres and young learners, while Pebble Buds are ideal for students and events.\n\nIf you have any further questions, please let us know.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_03",
+      "file": "email_03.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Coastline Telecom",
+          "actual": "Coastline Telecom",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Kochi",
+          "actual": "Kochi",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Ready",
+          "actual": "Ready",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [],
+          "actual": [],
+          "match": true
+        },
+        {
+          "field": "items[Meshwave AX3000 Router].product_code",
+          "expected": "RTR-AX3",
+          "actual": "RTR-AX3",
+          "match": true
+        },
+        {
+          "field": "items[Meshwave AX3000 Router].requested",
+          "expected": 20,
+          "actual": 20,
+          "match": true
+        },
+        {
+          "field": "items[Meshwave AX3000 Router].available",
+          "expected": 30,
+          "actual": 30,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Coastline Telecom",
+        "delivery_city": "Kochi",
+        "deadline": null,
+        "items": [
+          {
+            "product_name": "Meshwave AX3000 Router",
+            "product_code": "RTR-AX3",
+            "requested": 20,
+            "available": 30
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "RTR-AX3",
+              "quantity": 20,
+              "unit_price_inr": 6499,
+              "discount_percent": 5,
+              "line_total_inr": 123481.0
+            }
+          ],
+          "subtotal_inr": 123481.0,
+          "delivery_inr": 0.0,
+          "total_inr": 123481.0,
+          "valid_until": "2026-11-20"
+        },
+        "reply": "Dear Coastline Telecom,\n\nThank you for your order. We confirm that the requested quantity of 20 Meshwave AX3000 Routers (product code RTR-AX3) is available and your order can proceed.\n\nThe total price for this order is INR 123,481, including a 5% discount. Please note this quote is valid until November 20, 2026.\n\nWe appreciate your business and look forward to fulfilling your order.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_04",
+      "file": "email_04.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Greenfield Public School",
+          "actual": "Greenfield Public School",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Nagpur",
+          "actual": "Nagpur",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-11-30",
+          "actual": "2026-11-30",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Partial",
+          "actual": "Partial",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Nimbus Tab 10: requested 40, only 25 in stock"
+          ],
+          "actual": [
+            "Nimbus Tab 10: requested 40, only 25 in stock"
+          ],
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 10].product_code",
+          "expected": "TAB-10",
+          "actual": "TAB-10",
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 10].requested",
+          "expected": 40,
+          "actual": 40,
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 10].available",
+          "expected": 25,
+          "actual": 25,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].product_code",
+          "expected": "EAR-01",
+          "actual": "EAR-01",
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].requested",
+          "expected": 40,
+          "actual": 40,
+          "match": true
+        },
+        {
+          "field": "items[Pebble Buds].available",
+          "expected": 350,
+          "actual": 350,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Greenfield Public School",
+        "delivery_city": "Nagpur",
+        "deadline": "2026-11-30",
+        "items": [
+          {
+            "product_name": "Nimbus Tab 10",
+            "product_code": "TAB-10",
+            "requested": 40,
+            "available": 25
+          },
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 40,
+            "available": 350
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Nimbus Tab 10: requested 40, only 25 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-10",
+              "quantity": 25,
+              "unit_price_inr": 14999,
+              "discount_percent": 5,
+              "line_total_inr": 356226.25
+            },
+            {
+              "product_code": "EAR-01",
+              "quantity": 40,
+              "unit_price_inr": 1299,
+              "discount_percent": 5,
+              "line_total_inr": 49362.0
+            }
+          ],
+          "subtotal_inr": 405588.25,
+          "delivery_inr": 0.0,
+          "total_inr": 405588.25,
+          "valid_until": "2026-11-24"
+        },
+        "reply": "Dear Greenfield Public School,\n\nThank you for your order. We confirm that the Pebble Buds are fully available with 40 units in stock. For the Nimbus Tab 10, we have 25 units available against your requested 40 units.\n\nThe quotation totaling INR 405,588.25, valid until November 24, 2026, is attached for your reference. Please note payment terms allow 50% in advance and the balance on delivery, with special terms for schools.\n\nKindly confirm how you wish to proceed given the partial availability.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_05",
+      "file": "email_05.txt",
+      "pass": true,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Orbit Retail",
+          "actual": "Orbit Retail",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Chennai",
+          "actual": "Chennai",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-01",
+          "actual": "2026-12-01",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Partial",
+          "actual": "Partial",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Astra X9: requested 10, only 6 in stock"
+          ],
+          "actual": [
+            "Astra X9: requested 10, only 6 in stock"
+          ],
+          "match": true
+        },
+        {
+          "field": "items[Astra X9].product_code",
+          "expected": "PHN-X9",
+          "actual": "PHN-X9",
+          "match": true
+        },
+        {
+          "field": "items[Astra X9].requested",
+          "expected": 10,
+          "actual": 10,
+          "match": true
+        },
+        {
+          "field": "items[Astra X9].available",
+          "expected": 6,
+          "actual": 6,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Orbit Retail",
+        "delivery_city": "Chennai",
+        "deadline": "2026-12-01",
+        "items": [
+          {
+            "product_name": "Astra X9",
+            "product_code": "PHN-X9",
+            "requested": 10,
+            "available": 6
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Astra X9: requested 10, only 6 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "PHN-X9",
+              "quantity": 6,
+              "unit_price_inr": 34999,
+              "discount_percent": 0,
+              "line_total_inr": 209994.0
+            }
+          ],
+          "subtotal_inr": 209994.0,
+          "delivery_inr": 0.0,
+          "total_inr": 209994.0,
+          "valid_until": "2026-11-24"
+        },
+        "reply": "Dear Orbit Retail,\n\nThank you for your order. We can confirm that 6 units of the Astra X9 (product code PHN-X9) are fully available out of the requested 10 units. The quoted price for these 6 units totals INR 209,994 with no discount applied, valid until 24 November 2026.\n\nPlease note the current stock allows for partial fulfillment, and we are ready to proceed with your order for the available quantity.\n\nIf you have any questions, please let us know.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_06",
+      "file": "email_06.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Lakeview Hospital",
+          "actual": "Lakeview Hospital",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Bhopal",
+          "actual": "Bhopal",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-04",
+          "actual": "2026-12-04",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Partial",
+          "match": false
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Unknown product: Nimbus Tab 12"
+          ],
+          "actual": [
+            "Nimbus Tab 12: requested 30, only 25 in stock"
+          ],
+          "match": false
+        },
+        {
+          "field": "items[Nimbus Tab 12].product_code",
+          "expected": null,
+          "actual": "TAB-10",
+          "match": false
+        },
+        {
+          "field": "items[Nimbus Tab 12].requested",
+          "expected": 30,
+          "actual": 30,
+          "match": true
+        },
+        {
+          "field": "items[Nimbus Tab 12].available",
+          "expected": null,
+          "actual": 25,
+          "match": false
+        }
+      ],
+      "response": {
+        "customer": "Lakeview Hospital",
+        "delivery_city": "Bhopal",
+        "deadline": "2026-12-04",
+        "items": [
+          {
+            "product_name": "Nimbus Tab 12",
+            "product_code": "TAB-10",
+            "requested": 30,
+            "available": 25
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Nimbus Tab 12: requested 30, only 25 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-10",
+              "quantity": 25,
+              "unit_price_inr": 14999,
+              "discount_percent": 5,
+              "line_total_inr": 356226.25
+            }
+          ],
+          "subtotal_inr": 356226.25,
+          "delivery_inr": 0.0,
+          "total_inr": 356226.25,
+          "valid_until": "2026-11-23"
+        },
+        "reply": "Dear Lakeview Hospital,\n\nThank you for your order. We have partial availability for the Nimbus Tab 12 (product code TAB-10). You requested 30 units, but currently, only 25 units are in stock.\n\nThe quote for these 25 units is INR 356,226.25, including a 5% discount and no delivery charge. This quote is valid until 2026-11-23.\n\nPlease let us know if you wish to proceed with the available quantity.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_07",
+      "file": "email_07.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Quickship Labs",
+          "actual": "Quickship Labs",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Bengaluru",
+          "actual": "Bengaluru",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-11-19",
+          "actual": null,
+          "match": false
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Deadline 2026-11-19 is less than 3 days after the email date 2026-11-17"
+          ],
+          "actual": [
+            "Deadline 2026-11-19 is too soon: it must be at least 3 days after the email date (2026-11-17)"
+          ],
+          "match": false
+        },
+        {
+          "field": "items[Corelink Book 14].product_code",
+          "expected": "LAP-14",
+          "actual": "LAP-14",
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].requested",
+          "expected": 8,
+          "actual": 8,
+          "match": true
+        },
+        {
+          "field": "items[Corelink Book 14].available",
+          "expected": 12,
+          "actual": 12,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Quickship Labs",
+        "delivery_city": "Bengaluru",
+        "deadline": null,
+        "items": [
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 8,
+            "available": 12
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Deadline 2026-11-19 is too soon: it must be at least 3 days after the email date (2026-11-17)"
+        ],
+        "quote": null,
+        "reply": "Dear Quickship Labs,\n\nThank you for your order inquiry for 8 units of Corelink Book 14 (product code LAP-14). The requested quantity is available.\n\nHowever, the deadline you specified, 2026-11-19, is too soon. According to our policy, delivery deadlines must be at least 3 days after the email date, which is 2026-11-17. Please provide a revised deadline that complies with this requirement so we can proceed with your order.\n\nWe look forward to your updated details.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_08",
+      "file": "email_08.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Maple & Co Events",
+          "actual": "Maple & Co Events",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-11-28",
+          "actual": "2026-11-28",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Missing delivery city"
+          ],
+          "actual": [
+            "Delivery city is missing"
+          ],
+          "match": false
+        },
+        {
+          "field": "items[Volt 20000 Power Bank].product_code",
+          "expected": "PWB-20",
+          "actual": "PWB-20",
+          "match": true
+        },
+        {
+          "field": "items[Volt 20000 Power Bank].requested",
+          "expected": 50,
+          "actual": 50,
+          "match": true
+        },
+        {
+          "field": "items[Volt 20000 Power Bank].available",
+          "expected": 120,
+          "actual": 120,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Maple & Co Events",
+        "delivery_city": null,
+        "deadline": "2026-11-28",
+        "items": [
+          {
+            "product_name": "Volt 20000 Power Bank",
+            "product_code": "PWB-20",
+            "requested": 50,
+            "available": 120
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Delivery city is missing"
+        ],
+        "quote": null,
+        "reply": "Dear Maple & Co Events,\n\nThank you for your order request for 50 units of the Volt 20000 Power Bank (PWB-20). We have sufficient stock available for this item.\n\nHowever, we noticed that the delivery city information is missing. Could you please provide the delivery city so that we can proceed with processing your order?\n\nLooking forward to your reply.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_09",
+      "file": "email_09.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Riverstone Cafes",
+          "actual": "Riverstone Cafes",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Mumbai",
+          "actual": "Andheri East, Mumbai",
+          "match": false
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-05",
+          "actual": "2026-12-05",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Invalid quantity for Clearview 24 Monitor: 'a few'"
+          ],
+          "actual": [
+            "Clearview 24 Monitor: quantity is missing or invalid"
+          ],
+          "match": false
+        },
+        {
+          "field": "items[Clearview 24 Monitor].product_code",
+          "expected": "MON-24",
+          "actual": "MON-24",
+          "match": true
+        },
+        {
+          "field": "items[Clearview 24 Monitor].requested",
+          "expected": null,
+          "actual": null,
+          "match": true
+        },
+        {
+          "field": "items[Clearview 24 Monitor].available",
+          "expected": 18,
+          "actual": 18,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].product_code",
+          "expected": "CHG-65",
+          "actual": "CHG-65",
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].requested",
+          "expected": 6,
+          "actual": 6,
+          "match": true
+        },
+        {
+          "field": "items[Volt 65W Charger].available",
+          "expected": 200,
+          "actual": 200,
+          "match": true
+        }
+      ],
+      "response": {
+        "customer": "Riverstone Cafes",
+        "delivery_city": "Andheri East, Mumbai",
+        "deadline": "2026-12-05",
+        "items": [
+          {
+            "product_name": "Clearview 24 Monitor",
+            "product_code": "MON-24",
+            "requested": null,
+            "available": 18
+          },
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 6,
+            "available": 200
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Clearview 24 Monitor: quantity is missing or invalid"
+        ],
+        "quote": null,
+        "reply": "Dear Riverstone Cafes,\n\nThank you for your order. We noticed that the quantity for the Clearview 24 Monitor (product code MON-24) was not specified or is invalid. Could you please provide the desired quantity for this item so we can proceed with your order? The Volt 65W Charger is available with the requested quantity of 6 units.\n\nWe look forward to your response.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    },
+    {
+      "id": "email_10",
+      "file": "email_10.txt",
+      "pass": false,
+      "error": null,
+      "fields": [
+        {
+          "field": "customer",
+          "expected": "Northgate Logistics",
+          "actual": "Northgate Logistics",
+          "match": true
+        },
+        {
+          "field": "delivery_city",
+          "expected": "Nagpur",
+          "actual": "Nagpur",
+          "match": true
+        },
+        {
+          "field": "deadline",
+          "expected": "2026-12-02",
+          "actual": "2026-12-02",
+          "match": true
+        },
+        {
+          "field": "status",
+          "expected": "Need info",
+          "actual": "Need info",
+          "match": true
+        },
+        {
+          "field": "issues",
+          "expected": [
+            "Refers to a previous order",
+            "No items listed"
+          ],
+          "actual": [
+            "No items were requested",
+            "No previous order was found for this customer, so the earlier order cannot be repeated"
+          ],
+          "match": false
+        }
+      ],
+      "response": {
+        "customer": "Northgate Logistics",
+        "delivery_city": "Nagpur",
+        "deadline": "2026-12-02",
+        "items": [],
+        "status": "Need info",
+        "issues": [
+          "No items were requested",
+          "No previous order was found for this customer, so the earlier order cannot be repeated"
+        ],
+        "quote": null,
+        "reply": "Dear Northgate Logistics,\n\nWe noticed that your order did not include any items. Additionally, we have no record of any previous orders from you to repeat. Could you please provide the details of the products you wish to order so that we can assist you further?\n\nThank you for your cooperation.\n\nBest regards,  \nOrder Desk"
+      },
+      "reply_present": true
+    }
+  ],
+  "answer_key": "answer_key-1.json"
+}

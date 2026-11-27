@@ -1,0 +1,911 @@
+{
+  "summary": {
+    "generated_at": "2026-11-27T12:42:29+00:00",
+    "api_url": "http://localhost:8000/orders",
+    "total_emails": 25,
+    "successful": 25,
+    "failed": 0,
+    "status_counts": {
+      "Ready": 12,
+      "Partial": 4,
+      "Need info": 9
+    },
+    "error_counts": {},
+    "per_folder": {
+      "labelled-1": {
+        "total": 10,
+        "successful": 10,
+        "failed": 0
+      },
+      "labelled-2": {
+        "total": 10,
+        "successful": 10,
+        "failed": 0
+      },
+      "practice": {
+        "total": 5,
+        "successful": 5,
+        "failed": 0
+      }
+    }
+  },
+  "results": [
+    {
+      "folder": "labelled-1",
+      "file": "email_01.txt",
+      "response": {
+        "customer": "Sahyadri Tech Solutions",
+        "delivery_city": "Pune",
+        "deadline": "2026-11-24",
+        "items": [
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 10,
+            "available": 12
+          },
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 10,
+            "available": 200
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "LAP-14",
+              "quantity": 10,
+              "unit_price_inr": 52000,
+              "discount_percent": 5,
+              "line_total_inr": 494000.0
+            },
+            {
+              "product_code": "CHG-65",
+              "quantity": 10,
+              "unit_price_inr": 1499,
+              "discount_percent": 5,
+              "line_total_inr": 14240.5
+            }
+          ],
+          "subtotal_inr": 508240.5,
+          "delivery_inr": 0.0,
+          "total_inr": 508240.5,
+          "valid_until": "2026-11-23"
+        },
+        "reply": "Dear Sahyadri Tech Solutions,\n\nThank you for your order. We confirm the availability of the requested items: 10 units of Corelink Book 14 laptops and 10 units of Volt 65W Chargers. Your order details are confirmed, and the order can proceed as requested.\n\nThe total cost quoted is INR 508,240.5, valid until 2026-11-23.\n\nPlease feel free to contact us if you need any further assistance.\n\nBest regards,\nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_02.txt",
+      "response": {
+        "customer": "Brightpath Coaching Centre",
+        "delivery_city": "Hyderabad",
+        "deadline": "2026-11-23",
+        "items": [
+          {
+            "product_name": "nimbus tab 8 lite",
+            "product_code": "TAB-08",
+            "requested": 15,
+            "available": 60
+          },
+          {
+            "product_name": "PEBBLE BUDS",
+            "product_code": "EAR-01",
+            "requested": 15,
+            "available": 350
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-08",
+              "quantity": 15,
+              "unit_price_inr": 9499,
+              "discount_percent": 5,
+              "line_total_inr": 135360.75
+            },
+            {
+              "product_code": "EAR-01",
+              "quantity": 15,
+              "unit_price_inr": 1299,
+              "discount_percent": 5,
+              "line_total_inr": 18510.75
+            }
+          ],
+          "subtotal_inr": 153871.5,
+          "delivery_inr": 0.0,
+          "total_inr": 153871.5,
+          "valid_until": "2026-11-23"
+        },
+        "reply": "Dear Brightpath Coaching Centre,\n\nThank you for your order. We confirm the details for 15 Nimbus Tab 8 Lite tablets (product code TAB-08) and 15 Pebble Buds earbuds (product code EAR-01). Both items are fully available, and your order can proceed.\n\nThe total cost is INR 153,871.5 with the included discount, valid until 23 November 2026. The Nimbus Tab 8 Lite is well suited for coaching centres and young learners, and Pebble Buds are ideal for students and events.\n\nPlease let us know if you need any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_03.txt",
+      "response": {
+        "customer": "Coastline Telecom",
+        "delivery_city": "Kakkanad, Kochi",
+        "deadline": null,
+        "items": [
+          {
+            "product_name": "Meshwave AX3000 Router",
+            "product_code": "RTR-AX3",
+            "requested": 20,
+            "available": 30
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "RTR-AX3",
+              "quantity": 20,
+              "unit_price_inr": 6499,
+              "discount_percent": 5,
+              "line_total_inr": 123481.0
+            }
+          ],
+          "subtotal_inr": 123481.0,
+          "delivery_inr": 0.0,
+          "total_inr": 123481.0,
+          "valid_until": "2026-11-20"
+        },
+        "reply": "Dear Coastline Telecom,\n\nThank you for your order. We confirm that your request for 20 units of the Meshwave AX3000 Router (product code RTR-AX3) is fully available. The order details have been confirmed and can proceed.\n\nThe quoted price for this order, valid until November 20, 2026, is INR 123,481 after a 5% discount. This Wi-Fi 6 mesh router is ideal for ISPs, home installations, and small offices.\n\nPlease let us know if you require any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_04.txt",
+      "response": {
+        "customer": "Greenfield Public School",
+        "delivery_city": "Nagpur",
+        "deadline": "2026-11-30",
+        "items": [
+          {
+            "product_name": "Nimbus Tab 10",
+            "product_code": "TAB-10",
+            "requested": 40,
+            "available": 25
+          },
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 40,
+            "available": 350
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Nimbus Tab 10: requested 40, only 25 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-10",
+              "quantity": 25,
+              "unit_price_inr": 14999,
+              "discount_percent": 5,
+              "line_total_inr": 356226.25
+            },
+            {
+              "product_code": "EAR-01",
+              "quantity": 40,
+              "unit_price_inr": 1299,
+              "discount_percent": 5,
+              "line_total_inr": 49362.0
+            }
+          ],
+          "subtotal_inr": 405588.25,
+          "delivery_inr": 0.0,
+          "total_inr": 405588.25,
+          "valid_until": "2026-11-24"
+        },
+        "reply": "Dear Greenfield Public School,\n\nThank you for your order. We have partial availability for the requested items. The Pebble Buds are fully available with 40 units in stock as requested. For the Nimbus Tab 10, you requested 40 units, but only 25 are currently available.\n\nThe total quote for the available quantities amounts to INR 405,588.25, valid until 24 November 2026.\n\nPlease confirm how you wish to proceed with this partial availability.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_05.txt",
+      "response": {
+        "customer": "Orbit Retail",
+        "delivery_city": "T. Nagar",
+        "deadline": "2026-12-01",
+        "items": [
+          {
+            "product_name": "Astra X9",
+            "product_code": "PHN-X9",
+            "requested": 10,
+            "available": 6
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Astra X9: requested 10, only 6 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "PHN-X9",
+              "quantity": 6,
+              "unit_price_inr": 34999,
+              "discount_percent": 0,
+              "line_total_inr": 209994.0
+            }
+          ],
+          "subtotal_inr": 209994.0,
+          "delivery_inr": 0.0,
+          "total_inr": 209994.0,
+          "valid_until": "2026-11-24"
+        },
+        "reply": "Dear Orbit Retail,\n\nThank you for your order. We have the Astra X9 (PHN-X9) available, but only 6 units can be supplied out of the 10 requested. The order can proceed for these 6 units with a total cost of INR 209,994 as per the provided quote, valid until 24 November 2026.\n\nPlease let us know how you wish to proceed.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_06.txt",
+      "response": {
+        "customer": "Lakeview Hospital",
+        "delivery_city": "Bhopal",
+        "deadline": "2026-12-04",
+        "items": [
+          {
+            "product_name": "Nimbus Tab 12",
+            "product_code": null,
+            "requested": 30,
+            "available": null
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Nimbus Tab 12: not found in the catalogue"
+        ],
+        "quote": null,
+        "reply": "Dear Lakeview Hospital,\n\nThank you for your order inquiry. We could not find the product \"Nimbus Tab 12\" in our catalogue. Could you please specify your preferred brand or model for this tablet so that we can check availability and proceed with your order?\n\nWe look forward to your reply.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_07.txt",
+      "response": {
+        "customer": "Quickship Labs",
+        "delivery_city": "Bengaluru",
+        "deadline": "2026-11-19",
+        "items": [
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 8,
+            "available": 12
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Deadline 2026-11-19 is too soon: it must be at least 3 days after the email date (2026-11-17)"
+        ],
+        "quote": null,
+        "reply": "Dear Quickship Labs,\n\nThank you for your order inquiry. We have noted your request for 8 units of Corelink Book 14 laptops (product code LAP-14), which are fully available. \n\nHowever, the requested delivery deadline of 2026-11-19 is too soon according to our policy; it must be at least three days later than the email date of 2026-11-17. Please provide a revised delivery deadline that meets this requirement so we can proceed with your order.\n\nWe look forward to your confirmation.\n\nKind regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_08.txt",
+      "response": {
+        "customer": "Maple & Co Events",
+        "delivery_city": null,
+        "deadline": "2026-11-28",
+        "items": [
+          {
+            "product_name": "Volt 20000 Power Bank",
+            "product_code": "PWB-20",
+            "requested": 50,
+            "available": 120
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Delivery city is missing"
+        ],
+        "quote": null,
+        "reply": "Dear Maple & Co Events,\n\nThank you for your order request for 50 units of the Volt 20000 Power Bank (PWB-20). To proceed, could you please provide the delivery city? Once we have that information, we can continue with your order.\n\nBest regards,\nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_09.txt",
+      "response": {
+        "customer": "Riverstone Cafes",
+        "delivery_city": "Andheri East, Mumbai",
+        "deadline": "2026-12-05",
+        "items": [
+          {
+            "product_name": "Clearview 24 Monitor",
+            "product_code": "MON-24",
+            "requested": null,
+            "available": 18
+          },
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 6,
+            "available": 200
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Clearview 24 Monitor: quantity is missing or invalid"
+        ],
+        "quote": null,
+        "reply": "Dear Riverstone Cafes,\n\nThank you for your order. We noticed that the quantity for the Clearview 24 Monitor (product code MON-24) is missing or invalid. Could you please provide the correct quantity needed for this product? \n\nThe Volt 65W Charger (product code CHG-65) is available in the requested quantity of 6 units.\n\nWe look forward to your clarification to proceed with your order.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-1",
+      "file": "email_10.txt",
+      "response": {
+        "customer": "Northgate Logistics",
+        "delivery_city": "Nagpur",
+        "deadline": "2026-12-02",
+        "items": [],
+        "status": "Need info",
+        "issues": [
+          "No items were requested",
+          "No previous order was found for this customer, so the earlier order cannot be repeated"
+        ],
+        "quote": null,
+        "reply": "Dear Northgate Logistics,\n\nWe noticed that your order did not include any items and that there is no previous order on record for your organization to repeat. Could you please specify the products you wish to order so that we can proceed?\n\nThank you for your assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_21.txt",
+      "response": {
+        "customer": "Sunbeam International School",
+        "delivery_city": "Pune",
+        "deadline": "2026-12-11",
+        "items": [
+          {
+            "product_name": "Nimbus Tab 8 Lite",
+            "product_code": "TAB-08",
+            "requested": 60,
+            "available": 60
+          },
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 60,
+            "available": 350
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "TAB-08",
+              "quantity": 60,
+              "unit_price_inr": 9499,
+              "discount_percent": 8,
+              "line_total_inr": 524344.8
+            },
+            {
+              "product_code": "EAR-01",
+              "quantity": 60,
+              "unit_price_inr": 1299,
+              "discount_percent": 8,
+              "line_total_inr": 71704.8
+            }
+          ],
+          "subtotal_inr": 596049.6,
+          "delivery_inr": 0.0,
+          "total_inr": 596049.6,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Sunbeam International School,\n\nThank you for your order. We confirm that the requested quantities of Nimbus Tab 8 Lite (60 units) and Pebble Buds (60 units) are fully available. Your order details are confirmed, and the order can proceed.\n\nThe total amount for your order, inclusive of all discounts, is INR 596,049.60. Please note the quote is valid until 2026-11-27.\n\nIf you need any further assistance, feel free to contact us.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_22.txt",
+      "response": {
+        "customer": "Lotus Mobiles",
+        "delivery_city": "Coimbatore",
+        "deadline": "2026-12-04",
+        "items": [
+          {
+            "product_name": "black 128 GB 5G phones",
+            "product_code": "PHN-X9",
+            "requested": 5,
+            "available": 6
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "PHN-X9",
+              "quantity": 5,
+              "unit_price_inr": 34999,
+              "discount_percent": 0,
+              "line_total_inr": 174995.0
+            }
+          ],
+          "subtotal_inr": 174995.0,
+          "delivery_inr": 0.0,
+          "total_inr": 174995.0,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Lotus Mobiles,\n\nThank you for your order. We confirm that your request for 5 units of black 128 GB 5G phones (product code PHN-X9) is confirmed and can proceed. The total amount for your order is INR 174,995, with no discounts applied. Please note the quote is valid until 27 November 2026.\n\nIf you have any further questions or need assistance, please let us know.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_23.txt",
+      "response": {
+        "customer": "Sahyadri Tech Solutions",
+        "delivery_city": "Pune",
+        "deadline": "2026-12-08",
+        "items": [
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 5,
+            "available": 200
+          },
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 5,
+            "available": 12
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "CHG-65",
+              "quantity": 5,
+              "unit_price_inr": 1499,
+              "discount_percent": 0,
+              "line_total_inr": 7495.0
+            },
+            {
+              "product_code": "LAP-14",
+              "quantity": 5,
+              "unit_price_inr": 52000,
+              "discount_percent": 0,
+              "line_total_inr": 260000.0
+            }
+          ],
+          "subtotal_inr": 267495.0,
+          "delivery_inr": 0.0,
+          "total_inr": 267495.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Sahyadri Tech Solutions,\n\nThank you for your order. We confirm that the requested quantities of Volt 65W Charger (5 units) and Corelink Book 14 (5 units) are fully available. Your order details are confirmed and the order can proceed.\n\nThe total quoted amount is INR 267,495, valid until 2026-11-28, with free delivery as the subtotal exceeds Rs 50,000.\n\nPlease let us know if you have any further questions.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_24.txt",
+      "response": {
+        "customer": "Coastline Telecom",
+        "delivery_city": "Kakkanad, Kochi",
+        "deadline": "2026-12-15",
+        "items": [
+          {
+            "product_name": "Corelink Book 14",
+            "product_code": "LAP-14",
+            "requested": 30,
+            "available": 12
+          },
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 20,
+            "available": 200
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "Corelink Book 14: requested 30, only 12 in stock"
+        ],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "LAP-14",
+              "quantity": 12,
+              "unit_price_inr": 52000,
+              "discount_percent": 5,
+              "line_total_inr": 592800.0
+            },
+            {
+              "product_code": "CHG-65",
+              "quantity": 20,
+              "unit_price_inr": 1499,
+              "discount_percent": 5,
+              "line_total_inr": 28481.0
+            }
+          ],
+          "subtotal_inr": 621281.0,
+          "delivery_inr": 0.0,
+          "total_inr": 621281.0,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Coastline Telecom,\n\nThank you for your order. We have the Volt 65W Charger fully available with 20 units as requested. For the Corelink Book 14, 12 units are currently in stock out of the 30 requested. \n\nYour quote totals INR 621,281, including a 5% discount on both items, and is valid until 2026-11-27.\n\nPlease confirm how you wish to proceed with the available quantities.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_25.txt",
+      "response": {
+        "customer": "Eventora",
+        "delivery_city": "Salt Lake, Kolkata",
+        "deadline": "2026-12-09",
+        "items": [
+          {
+            "product_name": "wireless earbuds",
+            "product_code": null,
+            "requested": 20,
+            "available": null
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "wireless earbuds: matches more than one product (EAR-01, EAR-02); please say which one you mean"
+        ],
+        "quote": null,
+        "reply": "Dear Eventora,\n\nThank you for your order inquiry. We noticed your request for 20 wireless earbuds, but the description matches more than one product in our catalog: EAR-01 and EAR-02. Kindly specify which product you mean so we can check availability and proceed with your order.\n\nLooking forward to your clarification.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_26.txt",
+      "response": {
+        "customer": "Callpoint Services",
+        "delivery_city": "Thiruvananthapuram",
+        "deadline": "2026-12-07",
+        "items": [
+          {
+            "product_name": "Quietline Headset",
+            "product_code": "HDS-10",
+            "requested": 4,
+            "available": 45
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "HDS-10",
+              "quantity": 4,
+              "unit_price_inr": 2299,
+              "discount_percent": 0,
+              "line_total_inr": 9196.0
+            }
+          ],
+          "subtotal_inr": 9196.0,
+          "delivery_inr": 1500.0,
+          "total_inr": 10696.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Callpoint Services,\n\nThank you for your order. We confirm that the requested 4 units of Quietline Headset (HDS-10) are fully available. The order details are confirmed and can proceed.\n\nThe quoted total amount is INR 10,696.00, inclusive of delivery charges, and valid until 28 November 2026.\n\nIf you have any further questions, please let us know.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_27.txt",
+      "response": {
+        "customer": "Deccan Fiber",
+        "delivery_city": "Nashik",
+        "deadline": "2026-12-10",
+        "items": [
+          {
+            "product_name": "Meshwave AX3000 Router",
+            "product_code": "RTR-AX3",
+            "requested": 12,
+            "available": 30
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "RTR-AX3",
+              "quantity": 12,
+              "unit_price_inr": 6499,
+              "discount_percent": 5,
+              "line_total_inr": 74088.6
+            }
+          ],
+          "subtotal_inr": 74088.6,
+          "delivery_inr": 0.0,
+          "total_inr": 74088.6,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Deccan Fiber,\n\nThank you for your order. We confirm that your request for 12 units of the Meshwave AX3000 Router (product code RTR-AX3) is ready and can proceed. The routers you requested are available in full quantity.\n\nPlease note, the Meshwave AX3000 Router comes with a 1-year warranty from the date of delivery. The total price for your order, including a 5% discount and no delivery charge, is INR 74,088.60, valid until November 27, 2026.\n\nWe look forward to fulfilling your order.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_28.txt",
+      "response": {
+        "customer": "Kaveri Hospitals",
+        "delivery_city": "Bengaluru",
+        "deadline": "2026-12-10",
+        "items": [],
+        "status": "Need info",
+        "issues": [
+          "No items were requested",
+          "No previous order was found for this customer, so the earlier order cannot be repeated"
+        ],
+        "quote": null,
+        "reply": "Dear Kaveri Hospitals,\n\nWe have received your order inquiry, but it appears no items were requested. Additionally, since no previous order was found under your name, we cannot repeat any earlier order. Could you please provide the details of the products you wish to order? Once we have that information, we will be happy to check availability and assist you further.\n\nThank you for your cooperation.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_29.txt",
+      "response": {
+        "customer": "Brightline Design",
+        "delivery_city": "Panjim, Goa",
+        "deadline": "2026-12-12",
+        "items": [
+          {
+            "product_name": "Corelink Book 13",
+            "product_code": null,
+            "requested": 6,
+            "available": null
+          },
+          {
+            "product_name": "Clearview 24 Monitor",
+            "product_code": "MON-24",
+            "requested": 6,
+            "available": 18
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Corelink Book 13: not found in the catalogue"
+        ],
+        "quote": null,
+        "reply": "Dear Brightline Design,\n\nThank you for your order. We have the Clearview 24 Monitor (product code MON-24) fully available with sufficient stock for your requested quantity of 6 units.\n\nHowever, we were unable to locate the \"Corelink Book 13\" in our catalogue. Could you please specify your preferred brand or model for this product? This information will help us check availability and proceed with your order.\n\nWe look forward to your response.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "labelled-2",
+      "file": "email_30.txt",
+      "response": {
+        "customer": "Shubh Vivah Weddings",
+        "delivery_city": "Jaipur",
+        "deadline": "2026-12-18",
+        "items": [
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 250,
+            "available": 350
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "EAR-01",
+              "quantity": 250,
+              "unit_price_inr": 1299,
+              "discount_percent": 12,
+              "line_total_inr": 285780.0
+            }
+          ],
+          "subtotal_inr": 285780.0,
+          "delivery_inr": 0.0,
+          "total_inr": 285780.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Shubh Vivah Weddings,\n\nThank you for your order. We confirm that the requested 250 Pebble Buds (product code EAR-01) are available and your order can proceed. \n\nThe quoted total amount is INR 285,780.00 with a 12% discount applied, valid until November 28, 2026.\n\nPlease let us know if you need any further assistance.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "practice",
+      "file": "email_31.txt",
+      "response": {
+        "customer": "Framehouse Studios",
+        "delivery_city": "Mumbai",
+        "deadline": "2026-12-09",
+        "items": [
+          {
+            "product_name": "15.6-inch laptops with dedicated graphics",
+            "product_code": "LAP-15",
+            "requested": 2,
+            "available": 0
+          }
+        ],
+        "status": "Partial",
+        "issues": [
+          "15.6-inch laptops with dedicated graphics: requested 2, only 0 in stock"
+        ],
+        "quote": null,
+        "reply": "Dear Framehouse Studios,\n\nThank you for your order. We have reviewed your request for 2 units of the 15.6-inch laptops with dedicated graphics (Corelink Book 15 Pro, product code LAP-15). Unfortunately, we currently have none available in stock.\n\nPlease let us know how you wish to proceed with your order.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "practice",
+      "file": "email_32.txt",
+      "response": {
+        "customer": "Greenfield Public School",
+        "delivery_city": "Nagpur",
+        "deadline": "2026-12-14",
+        "items": [
+          {
+            "product_name": "Pebble Buds",
+            "product_code": "EAR-01",
+            "requested": 20,
+            "available": 350
+          },
+          {
+            "product_name": "Nimbus Tab 8 Lite",
+            "product_code": "TAB-08",
+            "requested": 20,
+            "available": 60
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "EAR-01",
+              "quantity": 20,
+              "unit_price_inr": 1299,
+              "discount_percent": 5,
+              "line_total_inr": 24681.0
+            },
+            {
+              "product_code": "TAB-08",
+              "quantity": 20,
+              "unit_price_inr": 9499,
+              "discount_percent": 5,
+              "line_total_inr": 180481.0
+            }
+          ],
+          "subtotal_inr": 205162.0,
+          "delivery_inr": 0.0,
+          "total_inr": 205162.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear Greenfield Public School,\n\nThank you for your order. We confirm that your order for 20 Pebble Buds (EAR-01) and 20 Nimbus Tab 8 Lite (TAB-08) is ready and can proceed. \n\nThe total order value is INR 205,162. Please note that schools may pay 100% within 30 days of delivery.\n\nWe appreciate your business and look forward to serving you.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "practice",
+      "file": "email_33.txt",
+      "response": {
+        "customer": "Trailblaze Adventures",
+        "delivery_city": "Manali",
+        "deadline": "2026-12-05",
+        "items": [
+          {
+            "product_name": "Volt 20000 Power Bank",
+            "product_code": "PWB-20",
+            "requested": 3,
+            "available": 120
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "PWB-20",
+              "quantity": 3,
+              "unit_price_inr": 1999,
+              "discount_percent": 0,
+              "line_total_inr": 5997.0
+            }
+          ],
+          "subtotal_inr": 5997.0,
+          "delivery_inr": 1500.0,
+          "total_inr": 7497.0,
+          "valid_until": "2026-11-27"
+        },
+        "reply": "Dear Trailblaze Adventures,\n\nYour order for 3 units of Volt 20000 Power Bank (PWB-20) is confirmed and all requested items are available. The order can now proceed. Please note, the quoted total amount is INR 7,497 including delivery, valid until November 27, 2026.\n\nIf you need further assistance, feel free to contact us.\n\nBest regards,\nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "practice",
+      "file": "email_34.txt",
+      "response": {
+        "customer": "QuickLearn Academy",
+        "delivery_city": "Chennai",
+        "deadline": "2026-11-24",
+        "items": [
+          {
+            "product_name": "10-inch grey tablets",
+            "product_code": "TAB-10",
+            "requested": 15,
+            "available": 25
+          }
+        ],
+        "status": "Need info",
+        "issues": [
+          "Deadline 2026-11-24 is too soon: it must be at least 3 days after the email date (2026-11-23)"
+        ],
+        "quote": null,
+        "reply": "Dear QuickLearn Academy,\n\nThank you for your order inquiry. We note your request for 15 units of the 10-inch grey tablets (product code TAB-10), which are available.\n\nHowever, we kindly ask you to revise the delivery deadline. The current deadline of 2026-11-24 is too soon, as it must be at least three days after the email date (2026-11-23).\n\nPlease provide an updated deadline so we can proceed with your order.\n\nBest regards,  \nOrder Desk"
+      },
+      "error": null
+    },
+    {
+      "folder": "practice",
+      "file": "email_35.txt",
+      "response": {
+        "customer": "FleetFix",
+        "delivery_city": "Hyderabad",
+        "deadline": "2026-12-07",
+        "items": [
+          {
+            "product_name": "Volt 65W Charger",
+            "product_code": "CHG-65",
+            "requested": 50,
+            "available": 200
+          }
+        ],
+        "status": "Ready",
+        "issues": [],
+        "quote": {
+          "lines": [
+            {
+              "product_code": "CHG-65",
+              "quantity": 50,
+              "unit_price_inr": 1499,
+              "discount_percent": 8,
+              "line_total_inr": 68954.0
+            }
+          ],
+          "subtotal_inr": 68954.0,
+          "delivery_inr": 0.0,
+          "total_inr": 68954.0,
+          "valid_until": "2026-11-28"
+        },
+        "reply": "Dear FleetFix,\n\nThank you for your order. We confirm that the requested 50 units of Volt 65W Charger (product code CHG-65) are available, and your order can proceed as placed.\n\nThe total amount for the order is INR 68,954, inclusive of an 8% discount. This charger is ideal for laptop fleets and travel kits and comes with a 1-year warranty from the date of delivery.\n\nPlease let us know if you have any further questions.\n\nBest regards,\nOrder Desk"
+      },
+      "error": null
+    }
+  ]
+}
