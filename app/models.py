@@ -1,7 +1,8 @@
 """Pydantic models passed between the workflow steps."""
-from typing import Literal
+from decimal import Decimal
+from typing import Annotated, Literal
 
-from pydantic import BaseModel, Field, field_validator
+from pydantic import BaseModel, Field, PlainSerializer, field_validator
 
 READY = "Ready"
 PARTIAL = "Partial"
@@ -32,6 +33,12 @@ class ExtractedOrder(BaseModel):
     delivery_city: str | None
     deadline: str | None
     items: list[OrderItem]
+    repeat_order: bool  # true when the customer asks to repeat their previous order
+
+
+# Result of the product-matching LLM call (codes only; Python validates every code)
+class ProductMatch(BaseModel):
+    product_codes: list[str]
 
 
 # ---- API response contract
@@ -42,6 +49,26 @@ class ResponseItem(BaseModel):
     available: int | None
 
 
+# Money is computed with Decimal; it is written to JSON as a number (two decimal places of precision).
+Money = Annotated[Decimal, PlainSerializer(lambda v: float(v), return_type=float, when_used="json")]
+
+
+class QuoteLine(BaseModel):
+    product_code: str
+    quantity: int
+    unit_price_inr: int
+    discount_percent: int
+    line_total_inr: Money
+
+
+class Quote(BaseModel):
+    lines: list[QuoteLine]
+    subtotal_inr: Money
+    delivery_inr: Money
+    total_inr: Money
+    valid_until: str  # YYYY-MM-DD
+
+
 class OrderResponse(BaseModel):
     customer: str | None
     delivery_city: str | None
@@ -49,4 +76,5 @@ class OrderResponse(BaseModel):
     items: list[ResponseItem]
     status: Status
     issues: list[str]
+    quote: Quote | None = None
     reply: str

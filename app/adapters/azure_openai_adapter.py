@@ -20,12 +20,14 @@ from openai import (
 from pydantic import ValidationError
 
 from app.config import Settings, get_settings
-from app.models import ExtractedOrder
+from app.models import ExtractedOrder, ProductMatch
 from app.observability import LLMTracer, sanitize_text
 from app.prompts import (
     EXTRACTION_SYSTEM_PROMPT,
+    MATCH_SYSTEM_PROMPT,
     REPLY_SYSTEM_PROMPT,
     build_extraction_user_prompt,
+    build_match_user_prompt,
     build_reply_user_prompt,
 )
 
@@ -33,6 +35,8 @@ MAX_RETRY_WAIT_SECONDS = 30.0  # upper bound for any single wait between retries
 
 OP_EXTRACT = "order_extraction"
 OP_REPLY = "customer_reply_generation"
+OP_MATCH = "product_description_matching"
+OP_EMBED = "embedding_generation"
 
 
 class LLMError(Exception):
@@ -108,7 +112,7 @@ class AzureOpenAIAdapter:
         self._client = client
         self._tracer = tracer or LLMTracer(self._s)
 
-    # application-level methods 
+    # ---- application-level methods -------------------------------------
     def extract_order(
         self, subject: str, body: str, reference_date: date
     ) -> ExtractedOrder:
@@ -162,6 +166,58 @@ class AzureOpenAIAdapter:
             return text, self._reply_trace_outputs(text)
 
         return self._call(OP_REPLY, request, self._reply_trace_inputs(result), finalize)
+
+    def select_matching_products(self, description: str, chunks) -> list[str]:
+        """Ask the model which product codes in the retrieved brochure chunks fit EVERY detail.
+        The codes are only a suggestion: Python validates each one against the products table."""
+        messages = [
+            {"role": "system", "content": MATCH_SYSTEM_PROMPT},
+            {"role": "user", "content": build_match_user_prompt(description, chunks)},
+        ]
+
+        def request():
+            return self._client.beta.chat.completions.parse(
+                model=self._s.azure_deployment,
+                messages=messages,
+                response_format=ProductMatch,
+                max_completion_tokens=self._s.llm_max_completion_tokens,
+            )
+
+        def finalize(response):
+            parsed = response.choices[0].message.parsed
+            if parsed is None:
+                raise LLMError("The model did not return a valid product match", "invalid_response")
+            return parsed.product_codes, {"code_count": len(parsed.product_codes)}
+
+        return self._call(
+            OP_MATCH, request, {"description_chars": len(description), "chunk_count": len(chunks)}, finalize
+        )
+
+    def generate_embeddings(self, texts: list[str]) -> list[list[float]]:
+        """Embed one or many texts with the embedding deployment (text-embedding-3-small, 1536 numbers each)."""
+        if not texts:
+            return []
+
+        def request():
+            return self._client.embeddings.create(model=self._s.embedding_deployment, input=texts)
+
+        def finalize(response):
+            vectors = [d.embedding for d in sorted(response.data, key=lambda d: d.index)]
+            expected = self._s.embedding_dimensions
+            if len(vectors) != len(texts) or any(len(v) != expected for v in vectors):
+                raise LLMError(
+                    f"Embedding response is not {len(texts)} vector(s) of {expected} dimensions "
+                    "(is the deployment text-embedding-3-small?)",
+                    "invalid_response",
+                )
+            return vectors, {"embedding_count": len(vectors)}
+
+        return self._call(
+            OP_EMBED, request, {"input_count": len(texts), "input_chars": sum(len(t) for t in texts)}, finalize
+        )
+
+    def generate_embedding(self, text: str) -> list[float]:
+        return self.generate_embeddings([text])[0]
 
     # ---- what LangSmith may see (never customer name/city, DB data, SQL or secrets) ----
     def _extraction_trace_inputs(self, subject: str, body: str, reference_date: date) -> dict:
