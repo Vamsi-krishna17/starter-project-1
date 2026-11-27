@@ -5,7 +5,6 @@ __pycache__/
 *.pyc
 .pytest_cache/
 
-output/
 answer_key-1.json
 answer_key-2.json
 input/

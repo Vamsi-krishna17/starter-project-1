@@ -8,21 +8,30 @@ A FastAPI service that reads a customer's raw email and returns a structured ord
 **Core rule: the LLM reads and writes text. Python code makes every decision** (validation, product matching,
 stock, status, prices, discounts, delivery, totals, validity).
 
+
+## Project 1 to Project 2 evolution
+
+| | Project 1 | Project 2 (added on top, Project 1 workflow kept) |
+|---|---|---|
+| Input | `POST /orders` with a raw customer email | unchanged |
+| Extraction (LLM) | customer, delivery city, deadline, items | item names **or descriptions** copied as written, plus a repeat-order flag |
+| Product matching | exact catalogue name only | exact name, **description via RAG**, or **repeat order via `order_history`** |
+| Knowledge | none | product brochures and pricing policy in PostgreSQL + pgvector |
+| Decisions (code) | validation, stock, status | the same, plus **quote**: prices, discounts, delivery, total, validity |
+| Reply (LLM) | from the computed result | from the result, the quote and retrieved document chunks |
+| Output | customer, delivery_city, deadline, items, status, issues, reply | the same fields plus `quote` |
+
+## Technology stack
+
+Python, FastAPI, Pydantic, PostgreSQL with pgvector, Azure OpenAI (OpenAI Python SDK: chat, structured outputs, embeddings), Loguru, optional LangSmith tracing,
+Python `Decimal` for money, Docker and Docker Compose, pytest, GitHub Actions.
+
 ---
 
-## 1. Evaluation results
+## 1. Evaluation status (initial)
 
-| Run | Emails | Answer key | Result |
-|---|---|---|---|
-| Project 1 regression (quote ignored) | `Input/labelled-1` (10) | `answer_key-1.json` | **94% accuracy** |
-| Project 2 labelled evaluation | `Input/labelled-2` (10) | `answer_key-2.json` | **88% accuracy** |
-| Practice (unseen, no answer key) | `Input/practice` (5) | none | inspected by hand |
-
-Reports are produced by `evaluate.py` (see section 9). Why each email missed:
-
-| Email | Field | Expected | Actual | Root cause |
-|---|---|---|---|---|
-| _fill in_ | | | | _extraction / retrieval / resolution / stock / quote / reply_ |
+Initial results, not final. `evaluate.py` compares each email's result with the answer keys; the scores reported by the author were **94%** (Project 1 regression, `Input/labelled-1`)
+and **88%** (Project 2, `Input/labelled-2`). Only the emails and details that were **incorrect** are documented, in **section 14**. No fix has been implemented for them yet.
 
 ---
 
@@ -255,6 +264,18 @@ python run_batch.py -o output/all_batch_results.json
 
 ## 9. Testing and evaluation
 
+### Two different kinds of testing (do not confuse them)
+
+| | Fake-scenario unit tests (`pytest`) | Real email processing |
+|---|---|---|
+| Inputs | invented scenarios built in `tests/` | the real emails in `Input/labelled-1`, `Input/labelled-2`, `Input/practice` |
+| LLM | **fake adapters; Azure OpenAI is never called** | real Azure OpenAI for extraction, product-code suggestion, embeddings and the reply |
+| Database | fake repositories | real PostgreSQL + pgvector |
+| Purpose | verify Python logic: validation, resolution rules, stock, status precedence, quote maths | evaluate the complete pipeline, including the quality of LLM extraction and replies |
+| Entry point | `pytest -q` | `run_batch.py` (HTTP to the running app) and `evaluate.py` |
+
+Unit tests say nothing about how well the real model extracts or phrases; real-email runs are what measure that. Both are needed.
+
 ### Unit tests (no Azure key, no database needed)
 
 ```bash
@@ -344,3 +365,95 @@ docker-compose.yml  Dockerfile  requirements.txt  pytest.ini
 - The quote lines return `product_code`, `quantity` (the quoted quantity), `unit_price_inr`, `discount_percent` and `line_total_inr`. Requested quantity and available stock are in `items`; a separate discount amount is not returned.
 - Two orders of one customer on the same `order_date`: the one with the higher `order_id` is treated as the latest.
 - Prompt injection cannot be fully prevented by instructions; safety comes from the design (the model makes no decisions and all numbers are computed in code).
+
+
+---
+
+## 14. Initial evaluation: incorrect results
+
+> **Initial evaluation, not final.** Nothing here claims that a problem has been fixed. The application will be run again and this section updated.
+
+### 14.1 What was compared
+
+- **Generated responses:** `batch_results.json` from `run_batch.py` (`POST /orders`, real Azure OpenAI pipeline): 25 emails, all processed, none failed.
+- **Correct answers:** `answer_key-1.json` (`email_01` to `email_10`) and `answer_key-2.json` (`email_21` to `email_30`). The answer keys were not changed.
+- **Only incorrect results are listed below.** Every other compared field matched, including all Project 2 quotes (subtotal, delivery, total and validity).
+- Causes come only from the generated output and the project code. The original email text, the brochures and the application logs were not available, so where the cause cannot be established it says **requires further investigation**.
+
+### 14.2 Mistakes
+
+| Email | Field | Expected | Actual | Root cause |
+|---|---|---|---|---|
+| `email_06` | `status` | `Need info` | `Partial` | **Product matching:** the unknown name `Nimbus Tab 12` was accepted as another product, so the order was treated as a valid but short order. |
+| `email_06` | `items[Nimbus Tab 12].product_code` | `null` | `TAB-10` | **Product matching:** a name that is not in the catalogue was resolved to the catalogue product `Nimbus Tab 10`; a similar name must not match. Why the resolution accepted it requires further investigation (retrieval, model suggestion or acceptance check; logs not available). |
+| `email_06` | `items[Nimbus Tab 12].available` | `null` | `25` | **Stock (follows from product matching):** stock was read for `TAB-10`, the wrongly resolved product. |
+| `email_06` | `issues` | `Unknown product: Nimbus Tab 12` | `Nimbus Tab 12: requested 30, only 25 in stock` | **Product matching:** the shortage issue replaced the unknown-product issue because the product was wrongly resolved. |
+| `email_06` | `quote` | `null` (a `Need info` order has no quote; the key has no quote for Project 1) | 25 x `TAB-10`, total 356,226.25 | **Quote (follows from product matching):** the arithmetic is correct for `TAB-10`, but the quote should not exist for a `Need info` order. |
+| `email_07` | `deadline` | `2026-11-19` | `null` | **Response mapping:** the deadline was extracted correctly (the issue text and reply both show `2026-11-19`), but a deadline that fails the 3-day lead-time check is reported as an issue and returned as `null`. |
+| `email_29` | `reply` | no claim that `Corelink Book 15 Pro` is available (seed stock for `LAP-15` is 0; reply text is not in the key) | "we have `Corelink Book 14` and `Corelink Book 15 Pro` available" | **Reply generation:** the availability claim is not supported by the computed result. Where the wording came from requires further investigation. Status, product, issue and all other fields for this email are correct. |
+
+### 14.3 Actual responses for the incorrect emails
+
+`email_06` (Lakeview Hospital), actual response:
+
+```json
+{
+  "customer": "Lakeview Hospital",
+  "delivery_city": "Bhopal",
+  "deadline": "2026-12-04",
+  "items": [{"product_name": "Nimbus Tab 12", "product_code": "TAB-10", "requested": 30, "available": 25}],
+  "status": "Partial",
+  "issues": ["Nimbus Tab 12: requested 30, only 25 in stock"],
+  "quote": {
+    "lines": [{"product_code": "TAB-10", "quantity": 25, "unit_price_inr": 14999, "discount_percent": 5, "line_total_inr": 356226.25}],
+    "subtotal_inr": 356226.25, "delivery_inr": 0.0, "total_inr": 356226.25, "valid_until": "2026-11-23"
+  },
+  "reply": "Dear Lakeview Hospital,\n\nThank you for your order. We have partial availability for your request of Nimbus Tab 12 (product code TAB-10). You requested 30 units, but we currently have 25 units in stock.\n\nThe quoted price for these 25 units is INR 356,226.25, including a 5% discount, valid until 2026-11-23.\n\nPlease let us know how you would like to proceed with this partial quantity.\n\nBest regards,\nOrder Desk"
+}
+```
+
+Customer, city, deadline and quantity are correct; only the product resolution (and what follows from it) is wrong. The reply mixes the customer's name `Nimbus Tab 12` with the code `TAB-10`.
+
+`email_07` (Quickship Labs), actual response:
+
+```json
+{
+  "customer": "Quickship Labs",
+  "delivery_city": "Bengaluru",
+  "deadline": null,
+  "items": [{"product_name": "Corelink Book 14", "product_code": "LAP-14", "requested": 8, "available": 12}],
+  "status": "Need info",
+  "issues": ["Deadline 2026-11-19 is too soon: it must be at least 3 days after the email date (2026-11-17)"],
+  "quote": null,
+  "reply": "Dear Quickship Labs,\n\nThank you for your order inquiry for 8 units of the Corelink Book 14 (product code LAP-14), which are available in the requested quantity.\n\nHowever, we noticed your requested delivery deadline of 2026-11-19 is too soon and must be at least three days after your email date of 2026-11-17. Please could you provide a revised deadline that meets this requirement so we can proceed with your order?\n\nWe look forward to your response.\n\nBest regards,\nOrder Desk"
+}
+```
+
+Status, issue and reply are correct; only the `deadline` field differs from the key. The same behaviour (a too-soon deadline returned as `null`) also appears in unscored practice email `email_34`.
+
+`email_29` (Brightline Design): all structured fields match the key; only the reply wording above is a problem. Actual reply:
+
+```text
+Dear Brightline Design,
+
+Thank you for your order. We have noted your request for 6 Clearview 24 Monitors (product code MON-24), which are available in the requested quantity. However, we could not find "Corelink Book 13" in our catalogue.
+
+Could you please specify your preferred brand or model for the Corelink Book 13, as we have "Corelink Book 14" and "Corelink Book 15 Pro" available? This will help us check availability and proceed with your order.
+
+We look forward to your reply.
+
+Best regards,
+Order Desk
+```
+
+### 14.4 Not listed as mistakes
+
+Some values differ from the key only in form, with the same answer: the delivery locality is kept with the city (for example `Kothrud, Pune` for `Pune`), `black 128 GB 5G phones` for `black 128 GB 5G phone`, and issue wording such as `Delivery city is missing` for `Missing delivery city`. An exact string comparison would flag these, so they may lower a script score even though the answer is equivalent. How the project's scoring rules treat them has not been confirmed.
+
+### 14.5 Open items
+
+- Establish why `email_06` resolved `Nimbus Tab 12` to `TAB-10` (retrieval, model suggestion or acceptance check), using the logs.
+- Decide whether a too-soon deadline should be returned or `null` (`email_07`).
+- Find where the `email_29` availability wording came from.
+- Verify brochure and policy statements in other replies against `docs/` (not checked here).
+- Replace this section with the final results after the next evaluation run.

@@ -26,6 +26,10 @@ LIMIT 1
 """
 
 
+# All product names, used to check a customer's wording against the real catalogue.
+LIST_PRODUCTS_SQL = "SELECT product_code, name FROM products ORDER BY product_code"
+
+
 class RepositoryError(Exception):
     """Database problem (connection or query)."""
 
@@ -77,3 +81,7 @@ class ProductRepository:
     def find_by_code(self, product_code: str) -> ProductRecord | None:
         rows = fetch_rows(self._url, FIND_BY_CODE_SQL, (product_code,))
         return self._record(rows[0]) if rows else None
+
+    def list_products(self) -> list[tuple[str, str]]:
+        """(product_code, name) of every catalogue product."""
+        return [(r[0], r[1]) for r in fetch_rows(self._url, LIST_PRODUCTS_SQL, ())]

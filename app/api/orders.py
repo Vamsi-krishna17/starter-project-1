@@ -64,6 +64,7 @@ def get_facade() -> OrderFacade:
     resolver = ProductResolver(
         products, retrieval=retrieval, matcher=adapter,
         history_repo=OrderHistoryRepository(settings.database_url), resolve_top_k=settings.rag_resolve_top_k,
+        aliases=dict(settings.product_aliases),
     )
     return OrderFacade(
         adapter=adapter,

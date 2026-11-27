@@ -36,6 +36,7 @@ class Settings:
     quote_free_delivery_threshold_inr: Decimal
     quote_delivery_charge_inr: Decimal
     quote_validity_days: int
+    product_aliases: tuple  # ((alias, catalogue product name), ...) explicitly configured
 
 
 def _flag(name: str) -> bool:
@@ -45,6 +46,12 @@ def _flag(name: str) -> bool:
 def _tiers(raw: str) -> tuple:
     pairs = [p.split(":") for p in raw.split(",") if p.strip()]
     return tuple(sorted((int(q), int(d)) for q, d in pairs))
+
+
+def _aliases(raw: str) -> tuple:
+    """'alias=Catalogue Name;alias2=Other Name' -> (('alias', 'Catalogue Name'), ...)"""
+    pairs = [p.split("=", 1) for p in raw.split(";") if "=" in p]
+    return tuple((" ".join(a.lower().split()), n.strip()) for a, n in pairs if a.strip() and n.strip())
 
 
 def load_settings() -> Settings:
@@ -74,6 +81,7 @@ def load_settings() -> Settings:
         quote_free_delivery_threshold_inr=Decimal(os.getenv("QUOTE_FREE_DELIVERY_THRESHOLD_INR", "50000")),
         quote_delivery_charge_inr=Decimal(os.getenv("QUOTE_DELIVERY_CHARGE_INR", "1500")),
         quote_validity_days=int(os.getenv("QUOTE_VALIDITY_DAYS", "7")),
+        product_aliases=_aliases(os.getenv("PRODUCT_ALIASES", "")),
     )
 
 

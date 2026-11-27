@@ -75,11 +75,10 @@ class OrderValidationService:
         except ValueError:
             result.issues.append(f"Deadline '{raw}' is not a valid date")
             return
+        result.deadline = deadline  # a valid date is always returned, even when it is too soon (the issue below still applies)
         earliest = reference_date + timedelta(days=self.lead_time_days)
         if deadline < earliest:
             result.issues.append(
                 f"Deadline {deadline.isoformat()} is too soon: it must be at least "
                 f"{self.lead_time_days} days after the email date ({reference_date.isoformat()})"
             )
-            return
-        result.deadline = deadline
